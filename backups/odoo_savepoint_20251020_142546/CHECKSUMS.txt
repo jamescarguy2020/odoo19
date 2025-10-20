@@ -1,0 +1,10 @@
+# BACKUP INTEGRITY CHECKSUMS
+# Generated: 2025-10-20 14:26
+# Use these to verify backup hasn't been corrupted
+
+MD5 Checksums:
+45f055c127ced7d7a18f560be4f54334  odoo_database.sql
+ff1fc4cb4f467b85cd22899aca5179a4  ../odoo_savepoint_20251020_142546.tar.gz
+
+To verify integrity later:
+md5sum -c CHECKSUMS.txt
