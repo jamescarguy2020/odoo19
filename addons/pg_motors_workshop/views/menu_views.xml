@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_pg_motors_root"
+              name="Workshop"
+              sequence="10"
+              web_icon="pg_motors_workshop,static/description/icon.png"/>
+
+    <!-- Operations Menu -->
+    <menuitem id="menu_pg_motors_operations"
+              name="Operations"
+              parent="menu_pg_motors_root"
+              sequence="10"/>
+
+    <menuitem id="menu_pg_motors_jobs"
+              name="Workshop Jobs"
+              parent="menu_pg_motors_operations"
+              action="action_pg_motors_workshop_job"
+              sequence="10"/>
+
+    <menuitem id="menu_pg_motors_vehicles"
+              name="Vehicles"
+              parent="menu_pg_motors_operations"
+              action="action_pg_motors_vehicle"
+              sequence="20"/>
+
+    <menuitem id="menu_pg_motors_customers"
+              name="Customers"
+              parent="menu_pg_motors_operations"
+              action="action_pg_motors_customer"
+              sequence="30"/>
+
+    <!-- Invoicing Menu -->
+    <menuitem id="menu_pg_motors_invoicing"
+              name="Invoicing"
+              parent="menu_pg_motors_root"
+              sequence="20"/>
+
+    <menuitem id="menu_pg_motors_vendor_invoices"
+              name="Vendor Invoice OCR"
+              parent="menu_pg_motors_invoicing"
+              action="action_vendor_invoice_ocr"
+              sequence="10"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_pg_motors_configuration"
+              name="Configuration"
+              parent="menu_pg_motors_root"
+              sequence="90"/>
+
+    <menuitem id="menu_pg_motors_brands"
+              name="Vehicle Brands"
+              parent="menu_pg_motors_configuration"
+              action="action_pg_motors_vehicle_brand"
+              sequence="10"/>
+
+    <menuitem id="menu_pg_motors_import"
+              name="Import MySQL Data"
+              parent="menu_pg_motors_configuration"
+              action="action_mysql_import_wizard"
+              sequence="20"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_pg_motors_reports"
+              name="Reporting"
+              parent="menu_pg_motors_root"
+              sequence="80"/>
+
+</odoo>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vehicle Brand Tree View -->
+    <record id="view_pg_motors_vehicle_brand_tree" model="ir.ui.view">
+        <field name="name">pg.motors.vehicle.brand.tree</field>
+        <field name="model">pg.motors.vehicle.brand</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Brands">
+                <field name="name"/>
+                <field name="abbreviations"/>
+                <field name="vehicle_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vehicle Brand Form View -->
+    <record id="view_pg_motors_vehicle_brand_form" model="ir.ui.view">
+        <field name="name">pg.motors.vehicle.brand.form</field>
+        <field name="model">pg.motors.vehicle.brand</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Brand">
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Brand Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="abbreviations" placeholder="e.g., CHEV,CHEVROLET"/>
+                        <field name="vehicle_count"/>
+                        <field name="logo_filename" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vehicle Brand Action -->
+    <record id="action_pg_motors_vehicle_brand" model="ir.actions.act_window">
+        <field name="name">Vehicle Brands</field>
+        <field name="res_model">pg.motors.vehicle.brand</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Vehicle Tree View -->
+    <record id="view_pg_motors_vehicle_tree" model="ir.ui.view">
+        <field name="name">pg.motors.vehicle.tree</field>
+        <field name="model">pg.motors.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicles">
+                <field name="registration_number"/>
+                <field name="customer_name"/>
+                <field name="brand_id"/>
+                <field name="model"/>
+                <field name="year"/>
+                <field name="color"/>
+                <field name="job_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vehicle Form View -->
+    <record id="view_pg_motors_vehicle_form" model="ir.ui.view">
+        <field name="name">pg.motors.vehicle.form</field>
+        <field name="model">pg.motors.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle">
+                <header>
+                    <button name="action_view_jobs" type="object" string="View Service History" class="oe_highlight" invisible="job_count == 0"/>
+                </header>
+                <sheet>
+                    <field name="brand_logo" widget="image" class="oe_avatar"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_jobs" type="object" class="oe_stat_button" icon="fa-wrench">
+                            <field name="job_count" widget="statinfo" string="Service Jobs"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="registration_number" placeholder="Registration Number"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Owner Information">
+                            <field name="customer_id"/>
+                            <field name="customer_name"/>
+                            <field name="customer_phone"/>
+                        </group>
+                        <group string="Vehicle Details">
+                            <field name="brand_id"/>
+                            <field name="brand_name" invisible="1"/>
+                            <field name="model"/>
+                            <field name="year"/>
+                            <field name="color"/>
+                        </group>
+                        <group string="Technical Details">
+                            <field name="vin"/>
+                            <field name="engine_number"/>
+                            <field name="transmission"/>
+                            <field name="fuel_type"/>
+                        </group>
+                        <group string="Odometer">
+                            <field name="odometer"/>
+                            <field name="odometer_unit"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Service History" name="service_history">
+                            <field name="job_ids">
+                                <tree>
+                                    <field name="job_number"/>
+                                    <field name="job_date"/>
+                                    <field name="name"/>
+                                    <field name="state" widget="badge"/>
+                                    <field name="total_amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes" placeholder="Vehicle notes..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vehicle Search View -->
+    <record id="view_pg_motors_vehicle_search" model="ir.ui.view">
+        <field name="name">pg.motors.vehicle.search</field>
+        <field name="model">pg.motors.vehicle</field>
+        <field name="arch" type="xml">
+            <search string="Search Vehicles">
+                <field name="registration_number"/>
+                <field name="vin"/>
+                <field name="customer_id"/>
+                <field name="brand_id"/>
+                <field name="model"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Brand" name="group_brand" context="{'group_by': 'brand_id'}"/>
+                    <filter string="Customer" name="group_customer" context="{'group_by': 'customer_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Vehicle Action -->
+    <record id="action_pg_motors_vehicle" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="res_model">pg.motors.vehicle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first vehicle
+            </p>
+            <p>
+                Manage customer vehicles and their service history.
+            </p>
+        </field>
+    </record>
+
+</odoo>
