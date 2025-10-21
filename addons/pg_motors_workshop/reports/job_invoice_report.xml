@@ -161,7 +161,7 @@
                                         <td><strong>GST (10%):</strong></td>
                                         <td class="text-end">$<span t-field="job.tax_amount" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></td>
                                     </tr>
-                                    <tr style="background: #0066cc; color: white; font-size: 16px;">
+                                    <tr style="background: #333; color: white; font-size: 16px;">
                                         <td><strong>TOTAL:</strong></td>
                                         <td class="text-end">
                                             <strong>$<span t-field="job.total_amount" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></strong>
@@ -175,7 +175,7 @@
                         <t t-if="job.service_notes">
                             <div class="row" style="margin-top: 20px;">
                                 <div class="col-12">
-                                    <h5 style="color: #0066cc;">
+                                    <h5>
                                         <strong>SERVICE NOTES</strong>
                                     </h5>
                                     <p style="white-space: pre-line;"><span t-field="job.service_notes"/></p>
@@ -186,12 +186,6 @@
                         <!-- Footer -->
                         <div class="row" style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #ddd; font-size: 11px;">
                             <div class="col-12 text-center">
-                                <p style="margin: 3px 0;">
-                                    <strong>Payment Terms:</strong> Payment due within 7 days of invoice date
-                                </p>
-                                <p style="margin: 3px 0;">
-                                    All work is guaranteed for 90 days or 5,000 km, whichever comes first
-                                </p>
                                 <p style="margin: 3px 0;">
                                     <strong>Thank you for your business!</strong>
                                 </p>

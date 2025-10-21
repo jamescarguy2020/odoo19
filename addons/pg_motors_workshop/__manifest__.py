@@ -75,10 +75,7 @@ Key Features:
         'reports/workshop_reports.xml',
     ],
     'assets': {
-        'web.assets_backend': [
-            'pg_motors_workshop/static/src/js/*.js',
-            'pg_motors_workshop/static/src/css/*.css',
-        ],
+        # No custom assets - using standard Odoo theme
     },
     'demo': [],
     'installable': True,
