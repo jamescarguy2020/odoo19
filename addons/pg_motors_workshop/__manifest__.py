@@ -59,6 +59,7 @@ Key Features:
         
         # Views
         'views/menu_views.xml',
+        'views/res_config_settings_views.xml',
         'views/customer_views.xml',
         'views/vehicle_views.xml',
         'views/workshop_job_views.xml',

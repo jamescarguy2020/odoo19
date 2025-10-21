@@ -18,15 +18,20 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <!-- Header -->
-                        <div class="row" style="border-bottom: 3px solid #0066cc; padding-bottom: 10px; margin-bottom: 20px;">
+                        <div class="row" style="border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
                             <div class="col-6">
-                                <h2 style="color: #0066cc; margin: 0;">
-                                    <strong>P &amp; G MOTORS</strong>
+                                <h2 style="margin: 0;">
+                                    <strong><span t-field="job.company_id.name"/></strong>
                                 </h2>
-                                <p style="margin: 5px 0;">Professional Auto Service</p>
+                                <p style="margin: 5px 0;" t-if="job.company_id.street">
+                                    <span t-field="job.company_id.street"/>
+                                </p>
+                                <p style="margin: 5px 0;" t-if="job.company_id.phone">
+                                    Phone: <span t-field="job.company_id.phone"/>
+                                </p>
                             </div>
                             <div class="col-6 text-end">
-                                <h3 style="color: #0066cc; margin: 0;">
+                                <h3 style="margin: 0;">
                                     <strong>TAX INVOICE</strong>
                                 </h3>
                                 <p style="margin: 5px 0;">
@@ -42,7 +47,7 @@
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-6">
                                 <div style="border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
-                                    <h5 style="color: #0066cc; margin-top: 0;">
+                                    <h5 style="margin-top: 0;">
                                         <strong>CUSTOMER DETAILS</strong>
                                     </h5>
                                     <p style="margin: 3px 0;">
@@ -61,7 +66,7 @@
                             </div>
                             <div class="col-6">
                                 <div style="border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
-                                    <h5 style="color: #0066cc; margin-top: 0;">
+                                    <h5 style="margin-top: 0;">
                                         <strong>VEHICLE DETAILS</strong>
                                     </h5>
                                     <p style="margin: 3px 0;">
@@ -93,11 +98,11 @@
 
                         <!-- Labour Table -->
                         <t t-if="job.labour_ids">
-                            <h5 style="color: #0066cc;">
+                            <h5>
                                 <strong>LABOUR</strong>
                             </h5>
                             <table class="table table-sm table-bordered" style="margin-bottom: 15px;">
-                                <thead style="background: #0066cc; color: white;">
+                                <thead style="background: #333; color: white;">
                                     <tr>
                                         <th>Description</th>
                                         <th class="text-center">Hours</th>
@@ -118,11 +123,11 @@
 
                         <!-- Parts Table -->
                         <t t-if="job.parts_ids">
-                            <h5 style="color: #0066cc;">
+                            <h5>
                                 <strong>PARTS &amp; MATERIALS</strong>
                             </h5>
                             <table class="table table-sm table-bordered" style="margin-bottom: 15px;">
-                                <thead style="background: #0066cc; color: white;">
+                                <thead style="background: #333; color: white;">
                                     <tr>
                                         <th>Description</th>
                                         <th>Part Number</th>
