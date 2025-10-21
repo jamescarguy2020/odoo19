@@ -25,3 +25,13 @@
 2025-10-21 05:19:50,194 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) fully done (#loop 1; done 44; remaining 0; duration 0.24s) 
 2025-10-21 05:19:50,198 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Portal Users Deletion' (2) starting 
 2025-10-21 05:19:50,203 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Portal Users Deletion' (2) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2025-10-21 05:41:50,394 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:50] "GET /web/webclient/version_info HTTP/1.1" 415 - 1 0.003 0.014
+2025-10-21 05:41:51,608 6901 INFO odoo_test odoo.http: Session expired 
+2025-10-21 05:41:51,608 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:51] "POST /web/session/get_session_info HTTP/1.1" 200 - 1 0.001 0.012
+2025-10-21 05:41:59,159 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:59] "GET /web/login HTTP/1.1" 200 - 3 0.002 0.011
+2025-10-21 05:41:59,891 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:59] "GET /web/database/selector HTTP/1.1" 200 - 3 0.003 0.343
+2025-10-21 05:42:09,705 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:09] "GET /web/database/manager HTTP/1.1" 200 - 3 0.002 0.343
+2025-10-21 05:42:11,099 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET / HTTP/1.1" 303 - 1 0.001 0.003
+2025-10-21 05:42:11,111 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/login HTTP/1.1" 200 - 3 0.002 0.003
+2025-10-21 05:42:11,452 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/database/manager HTTP/1.1" 200 - 3 0.002 0.333
+2025-10-21 05:42:11,461 6901 INFO ? werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.002
