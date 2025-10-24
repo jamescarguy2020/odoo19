@@ -15,19 +15,19 @@
 
     <!-- Record Rules -->
     <record id="workshop_customer_rule" model="ir.rule">
-        <field name="name">PG Motors Customer: Multi-Company</field>
+        <field name="name">Workshop Customer: Multi-Company</field>
         <field name="model_id" ref="model_workshop_customer"/>
         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 
     <record id="workshop_vehicle_rule" model="ir.rule">
-        <field name="name">PG Motors Vehicle: Multi-Company</field>
+        <field name="name">Workshop Vehicle: Multi-Company</field>
         <field name="model_id" ref="model_workshop_vehicle"/>
         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 
     <record id="workshop_job_rule" model="ir.rule">
-        <field name="name">PG Motors Job: Multi-Company</field>
+        <field name="name">Workshop Job: Multi-Company</field>
         <field name="model_id" ref="model_workshop_workshop_job"/>
         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
