@@ -1,0 +1,37 @@
+2025-10-21 05:18:49,576 6901 WARNING ? odoo.tools.config: missing --http-interface/http_interface, using 0.0.0.0 by default, will change to 127.0.0.1 in 20.0 
+2025-10-21 05:18:49,576 6901 INFO ? odoo: Odoo version 19.0 
+2025-10-21 05:18:49,576 6901 INFO ? odoo: addons paths: _NamespacePath(['/workspace/odoo/addons', '/home/ubuntu/.local/share/Odoo/addons/19.0', '/workspace/addons']) 
+2025-10-21 05:18:49,576 6901 INFO ? odoo: database: default@default:default 
+2025-10-21 05:18:49,748 6901 INFO ? odoo.service.server: HTTP service (werkzeug) running on localhost:8070 
+2025-10-21 05:18:49,758 6901 INFO odoo_test odoo.modules.loading: loading 1 modules... 
+2025-10-21 05:18:49,760 6901 INFO odoo_test odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-10-21 05:18:49,763 6901 INFO odoo_test odoo.modules.loading: loading 14 modules... 
+2025-10-21 05:18:49,877 6901 INFO odoo_test odoo.modules.loading: 14 modules loaded in 0.11s, 0 queries (+0 extra) 
+2025-10-21 05:18:49,896 6901 INFO odoo_test odoo.modules.loading: Modules loaded. 
+2025-10-21 05:18:49,905 6901 INFO odoo_test odoo.registry: Registry loaded in 0.152s 
+2025-10-21 05:19:03,914 6901 INFO odoo_test odoo.addons.base.models.ir_http: Generating routing map for key None 
+2025-10-21 05:19:03,927 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:19:03] "HEAD /web HTTP/1.1" 303 - 4 0.005 0.008
+2025-10-21 05:19:03,999 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:19:03] "GET /web/login HTTP/1.1" 200 - 51 0.017 0.069
+2025-10-21 05:19:30,160 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:19:30] "GET /web/database/manager HTTP/1.1" 200 - 3 0.002 0.334
+2025-10-21 05:19:30,467 6901 INFO ? werkzeug: 127.0.0.1 - - [21/Oct/2025 05:19:30] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.001
+2025-10-21 05:19:49,954 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) starting 
+2025-10-21 05:19:50,022 6901 INFO odoo_test odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2025-10-21 05:19:50,030 6901 INFO odoo_test odoo.addons.base.models.ir_attachment: filestore gc 10 checked, 0 removed 
+2025-10-21 05:19:50,073 6901 INFO odoo_test odoo.addons.base.models.res_users: GC 'res.users.apikeys' delete 0 entries 
+2025-10-21 05:19:50,094 6901 INFO odoo_test odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2025-10-21 05:19:50,176 6901 INFO odoo_test odoo.addons.api_doc.models.ir_attachment: GC'd 0 /doc cached index 
+2025-10-21 05:19:50,179 6901 INFO odoo_test odoo.addons.base.models.res_users: GC 'auth_totp.device' delete 0 entries 
+2025-10-21 05:19:50,191 6901 INFO odoo_test odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2025-10-21 05:19:50,194 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) fully done (#loop 1; done 44; remaining 0; duration 0.24s) 
+2025-10-21 05:19:50,198 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Portal Users Deletion' (2) starting 
+2025-10-21 05:19:50,203 6901 INFO odoo_test odoo.addons.base.models.ir_cron: Job 'Base: Portal Users Deletion' (2) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2025-10-21 05:41:50,394 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:50] "GET /web/webclient/version_info HTTP/1.1" 415 - 1 0.003 0.014
+2025-10-21 05:41:51,608 6901 INFO odoo_test odoo.http: Session expired 
+2025-10-21 05:41:51,608 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:51] "POST /web/session/get_session_info HTTP/1.1" 200 - 1 0.001 0.012
+2025-10-21 05:41:59,159 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:59] "GET /web/login HTTP/1.1" 200 - 3 0.002 0.011
+2025-10-21 05:41:59,891 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:41:59] "GET /web/database/selector HTTP/1.1" 200 - 3 0.003 0.343
+2025-10-21 05:42:09,705 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:09] "GET /web/database/manager HTTP/1.1" 200 - 3 0.002 0.343
+2025-10-21 05:42:11,099 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET / HTTP/1.1" 303 - 1 0.001 0.003
+2025-10-21 05:42:11,111 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/login HTTP/1.1" 200 - 3 0.002 0.003
+2025-10-21 05:42:11,452 6901 INFO odoo_test werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/database/manager HTTP/1.1" 200 - 3 0.002 0.333
+2025-10-21 05:42:11,461 6901 INFO ? werkzeug: 127.0.0.1 - - [21/Oct/2025 05:42:11] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - 0 0.000 0.002
