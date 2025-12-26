@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pg_motors_customer_user,pg.motors.customer.user,model_pg_motors_customer,group_pg_motors_user,1,1,1,0
+access_pg_motors_customer_manager,pg.motors.customer.manager,model_pg_motors_customer,group_pg_motors_manager,1,1,1,1
+access_pg_motors_vehicle_user,pg.motors.vehicle.user,model_pg_motors_vehicle,group_pg_motors_user,1,1,1,0
+access_pg_motors_vehicle_manager,pg.motors.vehicle.manager,model_pg_motors_vehicle,group_pg_motors_manager,1,1,1,1
+access_pg_motors_vehicle_brand_user,pg.motors.vehicle.brand.user,model_pg_motors_vehicle_brand,group_pg_motors_user,1,0,0,0
+access_pg_motors_vehicle_brand_manager,pg.motors.vehicle.brand.manager,model_pg_motors_vehicle_brand,group_pg_motors_manager,1,1,1,1
+access_pg_motors_workshop_job_user,pg.motors.workshop.job.user,model_pg_motors_workshop_job,group_pg_motors_user,1,1,1,0
+access_pg_motors_workshop_job_manager,pg.motors.workshop.job.manager,model_pg_motors_workshop_job,group_pg_motors_manager,1,1,1,1
+access_pg_motors_job_labour_user,pg.motors.job.labour.user,model_pg_motors_job_labour,group_pg_motors_user,1,1,1,1
+access_pg_motors_job_parts_user,pg.motors.job.parts.user,model_pg_motors_job_parts,group_pg_motors_user,1,1,1,1
+access_vendor_invoice_ocr_user,vendor.invoice.ocr.user,model_vendor_invoice_ocr,group_pg_motors_user,1,1,1,0
+access_vendor_invoice_ocr_manager,vendor.invoice.ocr.manager,model_vendor_invoice_ocr,group_pg_motors_manager,1,1,1,1
+access_mysql_import_wizard_manager,mysql.import.wizard.manager,model_mysql_import_wizard,group_pg_motors_manager,1,1,1,1
