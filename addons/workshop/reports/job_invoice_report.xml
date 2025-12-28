@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Workshop Invoice Report -->
+    <record id="action_report_workshop_invoice" model="ir.actions.report">
+        <field name="name">Workshop Invoice</field>
+        <field name="model">workshop.workshop.job</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">workshop_workshop.report_workshop_invoice</field>
+        <field name="report_file">workshop_workshop.report_workshop_invoice</field>
+        <field name="binding_model_id" ref="model_workshop_workshop_job"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Invoice Template -->
+    <template id="report_workshop_invoice">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="job">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <!-- Header -->
+                        <div class="row" style="border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
+                            <div class="col-6">
+                                <h2 style="margin: 0;">
+                                    <strong><span t-field="job.company_id.name"/></strong>
+                                </h2>
+                                <p style="margin: 5px 0;" t-if="job.company_id.street">
+                                    <span t-field="job.company_id.street"/>
+                                </p>
+                                <p style="margin: 5px 0;" t-if="job.company_id.phone">
+                                    Phone: <span t-field="job.company_id.phone"/>
+                                </p>
+                            </div>
+                            <div class="col-6 text-end">
+                                <h3 style="margin: 0;">
+                                    <strong>TAX INVOICE</strong>
+                                </h3>
+                                <p style="margin: 5px 0;">
+                                    <strong>Invoice #:</strong> <span t-field="job.job_number"/>
+                                </p>
+                                <p style="margin: 5px 0;">
+                                    <strong>Date:</strong> <span t-field="job.job_date"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Customer and Vehicle Details -->
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-6">
+                                <div style="border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
+                                    <h5 style="margin-top: 0;">
+                                        <strong>CUSTOMER DETAILS</strong>
+                                    </h5>
+                                    <p style="margin: 3px 0;">
+                                        <strong><span t-field="job.customer_id.name"/></strong>
+                                    </p>
+                                    <p style="margin: 3px 0;" t-if="job.customer_id.phone">
+                                        Phone: <span t-field="job.customer_id.phone"/>
+                                    </p>
+                                    <p style="margin: 3px 0;" t-if="job.customer_id.mobile">
+                                        Mobile: <span t-field="job.customer_id.mobile"/>
+                                    </p>
+                                    <p style="margin: 3px 0;" t-if="job.customer_id.email">
+                                        Email: <span t-field="job.customer_id.email"/>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div style="border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
+                                    <h5 style="margin-top: 0;">
+                                        <strong>VEHICLE DETAILS</strong>
+                                    </h5>
+                                    <p style="margin: 3px 0;">
+                                        <strong>Rego:</strong> <span t-field="job.vehicle_id.registration_number"/>
+                                    </p>
+                                    <p style="margin: 3px 0;">
+                                        <strong>Make/Model:</strong> 
+                                        <span t-field="job.vehicle_id.brand_id.name"/> 
+                                        <span t-field="job.vehicle_id.model"/>
+                                    </p>
+                                    <p style="margin: 3px 0;" t-if="job.vehicle_id.year">
+                                        <strong>Year:</strong> <span t-field="job.vehicle_id.year"/>
+                                    </p>
+                                    <p style="margin: 3px 0;" t-if="job.odometer_reading">
+                                        <strong>Odometer:</strong> <span t-field="job.odometer_reading"/> km
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Description -->
+                        <div class="row" style="margin-bottom: 15px;">
+                            <div class="col-12">
+                                <p>
+                                    <strong>Service Description:</strong> <span t-field="job.name"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Labour Table -->
+                        <t t-if="job.labour_ids">
+                            <h5>
+                                <strong>LABOUR</strong>
+                            </h5>
+                            <table class="table table-sm table-bordered" style="margin-bottom: 15px;">
+                                <thead style="background: #333; color: white;">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th class="text-center">Hours</th>
+                                        <th class="text-end">Rate</th>
+                                        <th class="text-end">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="job.labour_ids" t-as="labour">
+                                        <td><span t-field="labour.description"/></td>
+                                        <td class="text-center"><span t-field="labour.hours"/></td>
+                                        <td class="text-end">$<span t-field="labour.rate" t-options='{"widget": "float", "precision": 2}'/></td>
+                                        <td class="text-end">$<span t-field="labour.total" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <!-- Parts Table -->
+                        <t t-if="job.parts_ids">
+                            <h5>
+                                <strong>PARTS &amp; MATERIALS</strong>
+                            </h5>
+                            <table class="table table-sm table-bordered" style="margin-bottom: 15px;">
+                                <thead style="background: #333; color: white;">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Part Number</th>
+                                        <th class="text-center">Qty</th>
+                                        <th class="text-end">Unit Price</th>
+                                        <th class="text-end">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="job.parts_ids" t-as="part">
+                                        <td><span t-field="part.description"/></td>
+                                        <td><span t-field="part.part_number"/></td>
+                                        <td class="text-center"><span t-field="part.quantity"/></td>
+                                        <td class="text-end">$<span t-field="part.unit_price" t-options='{"widget": "float", "precision": 2}'/></td>
+                                        <td class="text-end">$<span t-field="part.total" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+
+                        <!-- Totals -->
+                        <div class="row">
+                            <div class="col-8"/>
+                            <div class="col-4">
+                                <table class="table table-sm" style="margin-bottom: 0;">
+                                    <tr>
+                                        <td><strong>Subtotal:</strong></td>
+                                        <td class="text-end">$<span t-field="job.subtotal" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>GST (10%):</strong></td>
+                                        <td class="text-end">$<span t-field="job.tax_amount" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></td>
+                                    </tr>
+                                    <tr style="background: #333; color: white; font-size: 16px;">
+                                        <td><strong>TOTAL:</strong></td>
+                                        <td class="text-end">
+                                            <strong>$<span t-field="job.total_amount" t-options='{"widget": "monetary", "display_currency": job.currency_id}'/></strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Service Notes -->
+                        <t t-if="job.service_notes">
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-12">
+                                    <h5>
+                                        <strong>SERVICE NOTES</strong>
+                                    </h5>
+                                    <p style="white-space: pre-line;"><span t-field="job.service_notes"/></p>
+                                </div>
+                            </div>
+                        </t>
+
+                        <!-- Footer -->
+                        <div class="row" style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #ddd; font-size: 11px;">
+                            <div class="col-12 text-center">
+                                <p style="margin: 3px 0;">
+                                    <strong>Thank you for your business!</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

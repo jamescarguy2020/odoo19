@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_workshop_root"
+              name="Workshop"
+              sequence="10"
+              web_icon="workshop_workshop,static/description/icon.png"/>
+
+    <!-- Operations Menu -->
+    <menuitem id="menu_workshop_operations"
+              name="Operations"
+              parent="menu_workshop_root"
+              sequence="10"/>
+
+    <menuitem id="menu_workshop_jobs"
+              name="Workshop Jobs"
+              parent="menu_workshop_operations"
+              action="action_workshop_workshop_job"
+              sequence="10"/>
+
+    <menuitem id="menu_workshop_vehicles"
+              name="Vehicles"
+              parent="menu_workshop_operations"
+              action="action_workshop_vehicle"
+              sequence="20"/>
+
+    <menuitem id="menu_workshop_customers"
+              name="Customers"
+              parent="menu_workshop_operations"
+              action="action_workshop_customer"
+              sequence="30"/>
+
+    <!-- Invoicing Menu -->
+    <menuitem id="menu_workshop_invoicing"
+              name="Invoicing"
+              parent="menu_workshop_root"
+              sequence="20"/>
+
+    <menuitem id="menu_workshop_vendor_invoices"
+              name="Vendor Invoice OCR"
+              parent="menu_workshop_invoicing"
+              action="action_vendor_invoice_ocr"
+              sequence="10"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_workshop_configuration"
+              name="Configuration"
+              parent="menu_workshop_root"
+              sequence="90"/>
+
+    <menuitem id="menu_workshop_brands"
+              name="Vehicle Brands"
+              parent="menu_workshop_configuration"
+              action="action_workshop_vehicle_brand"
+              sequence="10"/>
+
+    <menuitem id="menu_workshop_import"
+              name="Import MySQL Data"
+              parent="menu_workshop_configuration"
+              action="action_mysql_import_wizard"
+              sequence="20"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_workshop_reports"
+              name="Reporting"
+              parent="menu_workshop_root"
+              sequence="80"/>
+
+</odoo>

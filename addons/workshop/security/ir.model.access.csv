@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workshop_customer_user,workshop.customer.user,model_workshop_customer,group_workshop_user,1,1,1,0
+access_workshop_customer_manager,workshop.customer.manager,model_workshop_customer,group_workshop_manager,1,1,1,1
+access_workshop_vehicle_user,workshop.vehicle.user,model_workshop_vehicle,group_workshop_user,1,1,1,0
+access_workshop_vehicle_manager,workshop.vehicle.manager,model_workshop_vehicle,group_workshop_manager,1,1,1,1
+access_workshop_vehicle_brand_user,workshop.vehicle.brand.user,model_workshop_vehicle_brand,group_workshop_user,1,0,0,0
+access_workshop_vehicle_brand_manager,workshop.vehicle.brand.manager,model_workshop_vehicle_brand,group_workshop_manager,1,1,1,1
+access_workshop_workshop_job_user,workshop.workshop.job.user,model_workshop_workshop_job,group_workshop_user,1,1,1,0
+access_workshop_workshop_job_manager,workshop.workshop.job.manager,model_workshop_workshop_job,group_workshop_manager,1,1,1,1
+access_workshop_job_labour_user,workshop.job.labour.user,model_workshop_job_labour,group_workshop_user,1,1,1,1
+access_workshop_job_parts_user,workshop.job.parts.user,model_workshop_job_parts,group_workshop_user,1,1,1,1
+access_vendor_invoice_ocr_user,vendor.invoice.ocr.user,model_vendor_invoice_ocr,group_workshop_user,1,1,1,0
+access_vendor_invoice_ocr_manager,vendor.invoice.ocr.manager,model_vendor_invoice_ocr,group_workshop_manager,1,1,1,1
+access_mysql_import_wizard_manager,mysql.import.wizard.manager,model_mysql_import_wizard,group_workshop_manager,1,1,1,1
