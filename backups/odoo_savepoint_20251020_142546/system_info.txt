@@ -1,0 +1,24 @@
+# ODOO SAVEPOINT - System Information
+# Created: 2025-10-20 14:25:46
+
+## System Details
+- OS: Linux 6.1.147
+- Python: 3.13.3
+- PostgreSQL: 17.6
+- Odoo Version: 19.0
+
+## Installation Details
+- Odoo Path: /workspace
+- Database Name: odoo
+- Database User: ubuntu
+- HTTP Port: 8069
+- Addons Path: /workspace/addons
+
+## Running Process
+- Odoo Server: Running (PID varies)
+- Command: ./odoo-bin --addons-path=addons --http-port=8069 --database=odoo --db_host=localhost --db_user=ubuntu --without-demo=all --log-level=warn
+
+## PostgreSQL Configuration
+- Local connections: trust authentication
+- Service: postgresql (version 17)
+
